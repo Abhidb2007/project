@@ -18,7 +18,7 @@ function App() {
             padding: 10,
             width: 40,
             height: 40,
-            marginRight: 20,
+            marginRight: 22,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
