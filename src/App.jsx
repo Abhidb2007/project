@@ -1,14 +1,14 @@
 import{useState} from "react";
 function App(){
-  return <div>
-    hi heere
-    <Greeting name={"abhi"}/>
-  </div>
+  const[count, setCount]=useState(0);
+  function increaseCount(){
+    setCount(count+1);
+  }
+  setInterval(increaseCount,1000);
 }
-function Greeting(props){
-  return <div>
-    hi there{props.name}
-
+return(
+  <div>
+    {count}
   </div>
-}
+)
 export default App;
