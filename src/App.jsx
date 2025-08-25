@@ -2,9 +2,14 @@ import{useState, useEffect} from "react";
 function App(){
   const[count, setCount]=useState(1);
   function increaseCount(){
-    setCount(count+1);
+    console.log("increase count called" + count);
+    setCount(function (currentCount){
+      return currentCount+1;
+    });
+
   }
-  useEffect(()=>{
+  useEffect(function (){
+    console.log("aboveSetInterval")
     setInterval(increaseCount,1000)
 
   },[]);
