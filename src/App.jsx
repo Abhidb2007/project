@@ -1,22 +1,23 @@
-import { useState, useEffect } from "react";
+import{useState, useEffect} from "react";
+function App(){
+  const[count, setCount]=useState(1);
+  function increaseCount(){
+    
+    setCount(function (currentCount){
+      return currentCount+1;
+    });
 
-function App() {
-  const [count, setCount] = useState(0);
+  }
+  useEffect(function (){
+    console.log("above setinterval")
+    setInterval(increaseCount,1000)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => prevCount + 1);
-    }, 1000);
+  },[count]);
 
-    // Cleanup when component unmounts
-    return () => clearInterval(interval);
-  }, [count]);
+return <div>
 
-  return (
-    <div>
-      <h1>Count: {count}</h1>
-    </div>
-  );
+    <h1>Count:{count}</h1>
+  </div>
+
 }
-
 export default App;
