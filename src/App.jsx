@@ -1,14 +1,17 @@
-import{useState} from "react";
+import{useState, useEffect} from "react";
 function App(){
-  const[count, setCount]=useState(0);
+  const[count, setCount]=useState(1);
   function increaseCount(){
     setCount(count+1);
   }
-  setInterval(increaseCount,1000);
-}
-return(
-  <div>
+  useEffect(()=>{
+    setInterval(increaseCount,1000)
+
+  },[]);
+
+return <div>
     {count}
   </div>
-)
+
+}
 export default App;
